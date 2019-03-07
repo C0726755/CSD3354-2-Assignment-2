@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab
+namespace Consoleapp1
 {
     class Program
     {
         static void Main(string[] args)
         {
+            DelegateExercises delegateExercises = new DelegateExercises();
+
+            delegateExercises.Method2();
         }
     }
 
