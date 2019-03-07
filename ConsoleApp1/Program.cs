@@ -23,14 +23,14 @@ namespace Consoleapp1
         // Assignment 2
         //March 7, 2019
         public delegate void MyDelegate();
-        void Method1()
+        void Method1(int i)
         {
             Console.WriteLine("Method1");
             Console.ReadLine();
         }
         public void Method2()
         {
-            MyDelegate myDelegate = new MyDelegate(Method1);
+            MyDelegate myDelegate = new MyDelegate(Method2);
             myDelegate();
         }
     }
