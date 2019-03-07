@@ -13,39 +13,28 @@ namespace Consoleapp1
     
         class Program
         {
-            static void Main(string[] args)
-            {
-                DelegateExercises delegateExercises = new DelegateExercises();
-                delegateExercises.Method3();
-                Console.ReadLine();
-
-
-            }
+        static void Main(string[] args)
+        {
+            DelegateExercises delegateExercises = new DelegateExercises();
+            delegateExercises.Method3();
+            Console.ReadLine();
 
 
         }
         public delegate void MyDelegate();
-        public class DelegateExercises
 
+        public class DelegateExercises
         {
 
-            void Method1()
+
+
+
+            void Method3()
 
             {
 
-                System.Console.WriteLine("Method1");
 
-            }
-
-
-
-            public void Method3()
-
-            {
-
-                MyDelegate myDelegate = new MyDelegate(Method1);
-                myDelegate();
-                System.Console.WriteLine(myDelegate.ToString());
+                System.Console.WriteLine(MyDelegate.ToString());
 
 
             }
@@ -55,3 +44,4 @@ namespace Consoleapp1
 
         }
     }
+}
