@@ -10,38 +10,39 @@ using System.Threading.Tasks;
 
 namespace Consoleapp1
 {
-    
-        class Program
-        {
+
+    delegate void ExampleDelegate(string xyz);
+    class Program
+    {
         static void Main(string[] args)
         {
-            DelegateExercises delegateExercises = new DelegateExercises();
-            delegateExercises.Method3();
+            ExampleDelegate ex1Delegate, ex2Delegate, ex3Delegate, myDelegate;
+            ex1Delegate = new ExampleDelegate(Method1);
+            ex2Delegate = new ExampleDelegate(Method2);
+            ex3Delegate = ex1Delegate + ex2Delegate;
+            myDelegate = ex1Delegate + ex2Delegate;
+            myDelegate = ex1Delegate - ex2Delegate;
+            ex1Delegate("AAA");
+            ex2Delegate("BBB");
+            ex3Delegate("CCC");
+            myDelegate("DDD");
+            myDelegate = ex3Delegate - ex1Delegate;
+            myDelegate("EEE");
+            myDelegate = ex3Delegate - ex2Delegate;
+            myDelegate("FFF");
             Console.ReadLine();
 
 
         }
-        public delegate void MyDelegate();
-
-        public class DelegateExercises
+        public static void Method1(string xyz)
         {
-
-
-
-
-            void Method3()
-
-            {
-
-
-                System.Console.WriteLine(MyDelegate.ToString());
-
-
-            }
-
-
-
-
+            Console.WriteLine(xyz + "Method 1");
         }
+        public static void Method2(string xyz)
+        {
+            Console.WriteLine(xyz + "Method 2");
+        }
+
     }
 }
+
